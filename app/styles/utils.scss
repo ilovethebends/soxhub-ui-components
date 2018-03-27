@@ -420,6 +420,10 @@
 .fs-18 { font-size: 18px !important; }
 /**** END FONT ****/
 
+.vat {
+  vertical-align: top;
+}
+
 /**** BACKGROUND ****/
 /**
 	important for now until chris fixes menu
@@ -478,6 +482,7 @@
 }
 
 .db { display: block; }
+.dib { display: inline-block; }
 
 .cdisabled {
 	cursor: not-allowed;
