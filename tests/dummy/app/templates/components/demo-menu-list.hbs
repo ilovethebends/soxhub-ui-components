@@ -1,53 +1,21 @@
+{{!-- BEGIN-SNIPPET demo-menu-list.hbs --}}
 {{#docs-demo as |demo|}}
-  {{#demo.example}}
-    {{!-- BEGIN-SNIPPET demo-menu-list.hbs --}}
-
-    {{#ui-menu-list style=size size=size class="dib" as |menu|}}
-      {{menu.listItem title="All Comments"}}
-      {{menu.listItem title="Controls"}}
-      {{menu.listItem title="Tests"}}
-      {{menu.listItem title="Narratives"}}
-      {{menu.listItem title="Issues"}}
-      {{menu.listItem title="Workstream"}}
-      {{menu.listItem title="OpsAudits"}}
-      {{menu.listItem title="Closed Comments"}}
-    {{/ui-menu-list}}
-
-    <div class="m-l-10 dib vat">
-      <p>Used in basic dropdown:</p>
-      <ul class="list">
-        {{#basic-dropdown
-          tagName="li"
-          horizontalPosition="center"
-          class="bb-dashed bb--light-blue bb-dashed-hover bb-w1 menu-dropdown"as |dd|}}
-    		  {{#dd.trigger}}
-            {{selectedItem}}
-          {{/dd.trigger}}
-          {{#dd.content}}
-            {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
-              {{#each menuItems as |item|}}
-                {{menu.listItem title=item click=(action (mut selectedItem) item)}}
-              {{/each}}
-            {{/ui-menu-list}}
-          {{/dd.content}}
-        {{/basic-dropdown}}
-      </ul>
-    </div>
-
-    <p>Different sizes:</p>
-
-    <button onclick={{action (mut size) 'small'}} class='docs-btn'>
-      Small
-    </button>
-    <button onclick={{action (mut size) 'medium'}} class='docs-btn'>
-      Medium
-    </button>
-    <button onclick={{action (mut size) 'large'}} class='docs-btn'>
-      Large
-    </button>
-
-    {{!-- END-SNIPPET --}}
+  {{#demo.example name='demo-menu-list.hbs'}}
+    <ul class="list">
+      {{#basic-dropdown tagName="li" class="wfit" horizontalPosition="center" as |dd|}}
+        {{#dd.trigger}}
+          {{ui-breadcrumbs-menu-trigger title=selectedItem}}
+        {{/dd.trigger}}
+        {{#dd.content class="m-t-10"}}
+          {{#ui-menu-list click=(action dd.actions.close) as |menu|}}
+            {{#each menuItems as |item|}}
+              {{menu.listItem title=item click=(action (mut selectedItem) item)}}
+            {{/each}}
+          {{/ui-menu-list}}
+        {{/dd.content}}
+      {{/basic-dropdown}}
+    </ul>
   {{/demo.example}}
-
-  {{demo.snippet 'demo-menu-list.hbs' label='ui-menu-list demo'}}
+  {{demo.snippet 'demo-menu-list.hbs' label='Dropdown'}}
 {{/docs-demo}}
+{{!-- END-SNIPPET --}}

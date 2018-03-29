@@ -319,6 +319,10 @@
 .nmw {
 	min-width: 0px;
 }
+
+.wfit {
+  width: fit-content;
+}
 /**** END WIDTH ****/
 
 /**** BORDERS ****/
@@ -424,6 +428,9 @@
   vertical-align: top;
 }
 
+.z9000 {
+  z-index: 9000;
+}
 /**** BACKGROUND ****/
 /**
 	important for now until chris fixes menu
@@ -433,6 +440,8 @@
 .hover-bg-light-gray:hover {
   background-color: #E5EAEE;
 }
+
+.bg-white { background-color: #fff; }
 /****	END BACKGROUND ****/
 
 .r25 {
@@ -482,6 +491,7 @@
 }
 
 .db { display: block; }
+.di { display: inline; }
 .dib { display: inline-block; }
 
 .cdisabled {

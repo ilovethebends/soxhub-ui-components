@@ -1,0 +1,1 @@
+export { default } from 'soxhub-ui-components/components/ui-breadcrumbs-menu-trigger';
