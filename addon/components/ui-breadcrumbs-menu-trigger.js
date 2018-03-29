@@ -5,7 +5,16 @@ import { Styled, group } from '../lib/ui-components';
 export default Component.extend(Styled, {
   layout,
   tagName: 'span',
-  styles: {
-    base: 'bb-dashed bb--light-blue bb-dashed-hover bb-w1 p-b-4'
+  init() {
+    this._super(...arguments);
+    this.set('styles', {
+      base: 'bb-dashed bb--light-blue bb-dashed-hover bb-w1 p-b-4',
+      defaultStyle: 'small',
+      sizes: group({
+        small: '',
+        medium: 'p-l-20 p-r-20',
+        large: 'p-l-35 p-r-35'
+      })
+    });
   }
 });
